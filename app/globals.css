@@ -1,0 +1,69 @@
+/* 전역 스타일 — Apps Script 버전의 로즈/앰버/주아체 디자인 토큰 이식 */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+button, input, textarea, select {
+  font-family: inherit;
+}
+
+body {
+  font-family: 'Jua', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+  color: #111827;
+  background: #f3f4f6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: -10%;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(253, 164, 175, 0.22) 0px, transparent 45%),
+    radial-gradient(circle at 85% 70%, rgba(245, 158, 11, 0.14) 0px, transparent 50%),
+    radial-gradient(circle at 50% 95%, rgba(56, 189, 248, 0.10) 0px, transparent 55%);
+  animation: bgDrift 45s ease-in-out infinite alternate;
+  pointer-events: none;
+  filter: blur(30px);
+}
+
+@keyframes bgDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-30px, 20px) scale(1.05); }
+  100% { transform: translate(20px, -30px) scale(1.08); }
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow:
+    0 1px 2px rgba(17, 24, 39, 0.04),
+    0 4px 12px rgba(17, 24, 39, 0.04),
+    0 20px 50px -12px rgba(17, 24, 39, 0.12);
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #fda4af;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #fb7185;
+}
